@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiotClient", "RiotClient\RiotClient.csproj", "{CCC14DAB-A596-4F9F-8DCF-DE97A5488565}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiotClientTests", "RiotClientTests\RiotClientTests.csproj", "{7D8B6A05-6322-4B4E-9F7F-029183DA7449}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiotCommon", "RiotCommon\RiotCommon.csproj", "{095CD1E9-C161-4B05-A8FE-B5ADDB2DB546}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCC14DAB-A596-4F9F-8DCF-DE97A5488565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCC14DAB-A596-4F9F-8DCF-DE97A5488565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCC14DAB-A596-4F9F-8DCF-DE97A5488565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCC14DAB-A596-4F9F-8DCF-DE97A5488565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D8B6A05-6322-4B4E-9F7F-029183DA7449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D8B6A05-6322-4B4E-9F7F-029183DA7449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D8B6A05-6322-4B4E-9F7F-029183DA7449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D8B6A05-6322-4B4E-9F7F-029183DA7449}.Release|Any CPU.Build.0 = Release|Any CPU
+		{095CD1E9-C161-4B05-A8FE-B5ADDB2DB546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{095CD1E9-C161-4B05-A8FE-B5ADDB2DB546}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{095CD1E9-C161-4B05-A8FE-B5ADDB2DB546}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{095CD1E9-C161-4B05-A8FE-B5ADDB2DB546}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
