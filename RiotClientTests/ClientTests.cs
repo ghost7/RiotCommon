@@ -131,5 +131,17 @@ namespace RiotClientTests
                 }
             }
         }
+
+        [TestMethod]
+        public async Task TestMatchDetailClient()
+        {
+            var version = "2.2";
+            var matchId = "2029231395";
+            using (var client = new MatchDetailClient(Region, version, this.apiKey))
+            {
+                var matchDetail = await client.GetMatchDetails(matchId);
+                Assert.IsNotNull(matchDetail);
+            }
+        }
     }
 }

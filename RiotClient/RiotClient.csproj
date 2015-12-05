@@ -41,10 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clients\BaseClient.cs" />
+    <Compile Include="Clients\MatchDetailClient.cs" />
     <Compile Include="Clients\MatchListClient.cs" />
     <Compile Include="Clients\StaticDataClient.cs" />
     <Compile Include="Clients\SummonerClient.cs" />
     <Compile Include="Endpoints\EndpointFactory.cs" />
+    <Compile Include="Endpoints\Match\MatchDetailEndpoint.cs" />
     <Compile Include="Endpoints\Match\MatchListEndpoint.cs" />
     <Compile Include="Endpoints\RiotEndpoint.cs" />
     <Compile Include="Endpoints\StaticData\MasteriesEndpoint.cs" />

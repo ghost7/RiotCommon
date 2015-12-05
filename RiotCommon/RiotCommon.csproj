@@ -44,8 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\Match\BannedChampionDto.cs" />
+    <Compile Include="Dto\Match\EventDto.cs" />
+    <Compile Include="Dto\Match\FrameDto.cs" />
+    <Compile Include="Dto\Match\MasteryDto.cs" />
+    <Compile Include="Dto\Match\MatchDetailDto.cs" />
     <Compile Include="Dto\Match\MatchListDto.cs" />
     <Compile Include="Dto\Match\MatchReferenceDto.cs" />
+    <Compile Include="Dto\Match\ParticipantDto.cs" />
+    <Compile Include="Dto\Match\ParticipantFrameDto.cs" />
+    <Compile Include="Dto\Match\ParticipantIdentityDto.cs" />
+    <Compile Include="Dto\Match\ParticipantStatsDto.cs" />
+    <Compile Include="Dto\Match\ParticipantTimelineDataDto.cs" />
+    <Compile Include="Dto\Match\PlayerDto.cs" />
+    <Compile Include="Dto\Match\PositionDto.cs" />
+    <Compile Include="Dto\Match\RuneDto.cs" />
+    <Compile Include="Dto\Match\TeamDto.cs" />
+    <Compile Include="Dto\Match\TimelineDto.cs" />
     <Compile Include="Dto\StaticData\Mastery\ImageDto.cs" />
     <Compile Include="Dto\StaticData\Mastery\MasteryDto.cs" />
     <Compile Include="Dto\StaticData\Mastery\MasteryListDto.cs" />
@@ -58,6 +73,7 @@
     <Compile Include="Dto\Summoner\MasteryDto.cs" />
     <Compile Include="Dto\Summoner\MasteryPageDto.cs" />
     <Compile Include="Dto\Summoner\MasteryPagesDto.cs" />
+    <Compile Include="Dto\Match\ParticipantTimelineDto.cs" />
     <Compile Include="Dto\Summoner\RunePageDto.cs" />
     <Compile Include="Dto\Summoner\RunePagesDto.cs" />
     <Compile Include="Dto\Summoner\RuneSlotDto.cs" />

@@ -60,5 +60,10 @@ namespace CoffeeCat.RiotClient.Endpoints
         {
             return new MatchListEndpoint(this.Region, version, this.ApiKey, summonerId, beginTime, endTime).GetUri();
         }
+
+        public Uri GetMatchDetailUri(string version, string matchId)
+        {
+            return new MatchDetailEndpoint(this.Region, version, this.ApiKey, matchId).GetUri();
+        }
     }
 }
