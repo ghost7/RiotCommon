@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace CoffeeCat.RiotClient.Clients
 {
-    public class BaseClient
+    public class BaseClient : IDisposable
     {
         private WebClient webClient;
+        private bool disposed;
 
         internal EndpointFactory EndpointFactory;
 
@@ -25,6 +26,27 @@ namespace CoffeeCat.RiotClient.Clients
             this.ApiKey = apiKey;
             this.EndpointFactory = new EndpointFactory(apiKey, region);
             this.webClient = new WebClient();
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposed)
+            {
+                return;
+            }
+
+            if (disposing)
+            {
+                this.webClient.Dispose();
+            }
+
+            disposed = true;
         }
 
         protected async Task<T> DownloadRiotData<T>(Uri uri) where T : class
