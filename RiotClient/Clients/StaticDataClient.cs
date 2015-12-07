@@ -1,4 +1,5 @@
-﻿using CoffeeCat.RiotCommon.Dto.StaticData.Mastery;
+﻿using CoffeeCat.RiotCommon.Dto.StaticData.Champion;
+using CoffeeCat.RiotCommon.Dto.StaticData.Mastery;
 using CoffeeCat.RiotCommon.Dto.StaticData.Rune;
 using CoffeeCat.RiotCommon.Utils;
 using System.Threading.Tasks;
@@ -26,6 +27,12 @@ namespace CoffeeCat.RiotClient.Clients
         {
             var uri = this.EndpointFactory.GetRunesUri(this.Version);
             return this.DownloadRiotData<RuneListDto>(uri);
+        }
+
+        public Task<ChampionListDto> GetChampions()
+        {
+            var uri = this.EndpointFactory.GetChampionsUri(this.Version);
+            return this.DownloadRiotData<ChampionListDto>(uri);
         }
     }
 }

@@ -49,6 +49,7 @@
     <Compile Include="Endpoints\Match\MatchDetailEndpoint.cs" />
     <Compile Include="Endpoints\Match\MatchListEndpoint.cs" />
     <Compile Include="Endpoints\RiotEndpoint.cs" />
+    <Compile Include="Endpoints\StaticData\ChampionsEndpoint.cs" />
     <Compile Include="Endpoints\StaticData\MasteriesEndpoint.cs" />
     <Compile Include="Endpoints\StaticData\RunesEndpoint.cs" />
     <Compile Include="Endpoints\Summoner\SummonerByIdEndpoint.cs" />

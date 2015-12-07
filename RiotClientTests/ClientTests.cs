@@ -103,6 +103,9 @@ namespace RiotClientTests
 
                 var runes = await staticDataClient.GetRunes();
                 Assert.IsNotNull(runes);
+
+                var champions = await staticDataClient.GetChampions();
+                Assert.IsNotNull(champions);
             }
         }
 
