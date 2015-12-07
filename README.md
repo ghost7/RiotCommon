@@ -25,6 +25,6 @@ using (var summonerClient = new SummonerClient("na", "1.4", apiKey))
 
 NuGet packages now available.
 
-https://www.nuget.org/packages/CoffeeCat.RiotCommon/1.0.0
+https://www.nuget.org/packages/CoffeeCat.RiotCommon
 
-https://www.nuget.org/packages/CoffeeCat.RiotClient/1.0.0
+https://www.nuget.org/packages/CoffeeCat.RiotClient
