@@ -3,6 +3,7 @@ using CoffeeCat.RiotCommon.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace CoffeeCat.RiotClient.Clients
@@ -11,8 +12,8 @@ namespace CoffeeCat.RiotClient.Clients
     {
         public string Version { get; private set; }
 
-        public SummonerClient(string region, string version, string apiKey)
-          : base(region, apiKey)
+        public SummonerClient(string region, string version, string apiKey, Uri baseUri, HttpMessageHandler messageHandler)
+          : base(region, apiKey, baseUri, messageHandler)
         {
             Validation.ValidateNotNull(version, nameof(version));
             this.Version = version;

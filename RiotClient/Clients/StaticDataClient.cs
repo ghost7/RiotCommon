@@ -2,6 +2,8 @@
 using CoffeeCat.RiotCommon.Dto.StaticData.Mastery;
 using CoffeeCat.RiotCommon.Dto.StaticData.Rune;
 using CoffeeCat.RiotCommon.Utils;
+using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace CoffeeCat.RiotClient.Clients
@@ -10,8 +12,8 @@ namespace CoffeeCat.RiotClient.Clients
     {
         public string Version { get; private set; }
 
-        public StaticDataClient(string region, string version, string apiKey)
-          : base(region, apiKey)
+        public StaticDataClient(string region, string version, string apiKey, Uri baseUri, HttpMessageHandler messageHandler)
+          : base(region, apiKey, baseUri, messageHandler)
         {
             Validation.ValidateNotNull(version, nameof(version));
             this.Version = version;

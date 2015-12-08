@@ -11,7 +11,6 @@ namespace CoffeeCat.RiotClient.Endpoints
 
         protected Dictionary<string, string> QueryParameterDict { get; private set; }
 
-        public string Base => "https://na.api.pvp.net";
         public string Region { get; private set; }
         public string Version { get; private set; }
 
@@ -36,9 +35,9 @@ namespace CoffeeCat.RiotClient.Endpoints
         {
             var apiBaseFormatted = this.Format();
             var queryParameters = this.GetQueryParameterString();
-            var uriString = string.Format("{0}/{1}?{2}", this.Base, apiBaseFormatted, queryParameters);
+            var uriString = string.Format("{0}?{1}", apiBaseFormatted, queryParameters);
 
-            return new Uri(uriString);
+            return new Uri(uriString, UriKind.Relative);
         }
 
         private string GetQueryParameterString()

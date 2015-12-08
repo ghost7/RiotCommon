@@ -1,6 +1,7 @@
 ﻿using CoffeeCat.RiotCommon.Dto.Match;
 using CoffeeCat.RiotCommon.Utils;
 using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace CoffeeCat.RiotClient.Clients
@@ -9,7 +10,8 @@ namespace CoffeeCat.RiotClient.Clients
     {
         public string Version { get; private set; }
 
-        public MatchListClient(string region, string version, string apiKey) : base(region, apiKey)
+        public MatchListClient(string region, string version, string apiKey, Uri baseUri, HttpMessageHandler messageHandler) 
+            : base(region, apiKey, baseUri, messageHandler)
         {
             Validation.ValidateNotNullOrWhitespace(version, nameof(version));
             this.Version = version;

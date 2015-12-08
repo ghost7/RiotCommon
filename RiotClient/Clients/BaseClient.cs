@@ -1,14 +1,14 @@
 ﻿using CoffeeCat.RiotClient.Endpoints;
 using CoffeeCat.RiotCommon.Utils;
 using System;
-using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace CoffeeCat.RiotClient.Clients
 {
     public class BaseClient : IDisposable
     {
-        private WebClient webClient;
+        private HttpClient httpClient;
         private bool disposed;
 
         internal EndpointFactory EndpointFactory;
@@ -17,7 +17,7 @@ namespace CoffeeCat.RiotClient.Clients
 
         public string ApiKey { get; private set; }
 
-        public BaseClient(string region, string apiKey)
+        public BaseClient(string region, string apiKey, Uri baseUri, HttpMessageHandler messageHandler)
         {
             Validation.ValidateNotNullOrWhitespace(region, nameof(region));
             Validation.ValidateNotNullOrWhitespace(apiKey, nameof(apiKey));
@@ -25,7 +25,10 @@ namespace CoffeeCat.RiotClient.Clients
             this.Region = region;
             this.ApiKey = apiKey;
             this.EndpointFactory = new EndpointFactory(apiKey, region);
-            this.webClient = new WebClient();
+            this.httpClient = new HttpClient(messageHandler)
+            {
+                BaseAddress = baseUri,
+            };
         }
 
         public void Dispose()
@@ -43,7 +46,7 @@ namespace CoffeeCat.RiotClient.Clients
 
             if (disposing)
             {
-                this.webClient.Dispose();
+                this.httpClient.Dispose();
             }
 
             disposed = true;
@@ -53,8 +56,14 @@ namespace CoffeeCat.RiotClient.Clients
         {
             Validation.ValidateNotNull(uri, nameof(uri));
 
-            string json = await this.webClient.DownloadStringTaskAsync(uri);
-            return JsonUtils.Deserialize<T>(json);
+            var response = await httpClient.GetAsync(uri);
+
+            // TODO: replace this with retry logic
+            response.EnsureSuccessStatusCode();
+
+            var responseBody = await response.Content.ReadAsStringAsync();
+
+            return JsonUtils.Deserialize<T>(responseBody);
         }
     }
 }
