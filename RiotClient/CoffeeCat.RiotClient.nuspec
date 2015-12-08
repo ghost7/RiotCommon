@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>CoffeeCat.RiotClient</id>
-    <version>1.0.0.1</version>
+    <version>1.0.0.2</version>
     <title>CoffeeCat.RiotClient</title>
     <authors>Tony Majestro</authors>
     <owners>Tony Majestro</owners>
@@ -10,6 +10,7 @@
     <copyright>Copyright 2015</copyright>
       <dependencies>
           <dependency id="CoffeeCat.RiotCommon" version="1.0.0.1" />
+          <dependency id="Newtonsoft.Json" version="7.0.1" />
       </dependencies>
   </metadata>
   <files>

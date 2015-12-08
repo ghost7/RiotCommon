@@ -9,6 +9,10 @@
     <description>Common utilities for Riot API</description>
     <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
     <copyright>Copyright 2015</copyright>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="7.0.1" />
+    </dependencies>
+    
   </metadata>
   <files>
       <file src="bin\Debug\CoffeeCat.RiotCommon.pdb" target="lib\net40\" />
