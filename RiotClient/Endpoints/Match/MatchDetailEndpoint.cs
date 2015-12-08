@@ -9,8 +9,9 @@ namespace CoffeeCat.RiotClient.Endpoints.Match
 {
     internal class MatchDetailEndpoint : RiotEndpoint
     {
-        public override string ApiBase => "api/lol/{0}/v{1}/match/{2}";
+        private static string IncludeTimelineKey = "includeTimeline";
 
+        public override string ApiBase => "api/lol/{0}/v{1}/match/{2}";
         private string matchId;
 
         public MatchDetailEndpoint(string region, string version, string apiKey, string matchId)
@@ -18,6 +19,8 @@ namespace CoffeeCat.RiotClient.Endpoints.Match
         {
             Validation.ValidateNotNullOrWhitespace(matchId, nameof(matchId));
             this.matchId = matchId;
+
+            this.QueryParameterDict[IncludeTimelineKey] = "true";
         }
 
         public override string Format()
